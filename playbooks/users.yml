@@ -1,0 +1,19 @@
+---
+- name: Create admin user
+  hosts: ubuntu_servers
+  become: true
+
+  tasks:
+    - name: Create ansibleadmin user
+      user:
+        name: ansibleadmin
+        groups: sudo
+        append: true
+        shell: /bin/bash
+        create_home: true
+
+    - name: Allow passwordless sudo for ansibleadmin
+      copy:
+        dest: /etc/sudoers.d/ansibleadmin
+        content: "ansibleadmin ALL=(ALL) NOPASSWD:ALL\n"
+        mode: '0440'
