@@ -1,0 +1,21 @@
+---
+- name: Install common packages
+  hosts: ubuntu_servers
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+
+    - name: Install common administration packages
+      apt:
+        name:
+          - curl
+          - vim
+          - git
+          - htop
+          - ufw
+          - ca-certificates
+          - gnupg
+        state: present
