@@ -24,3 +24,4 @@ Verified Ansible connectivity to managed Ubuntu servers using:
 
 ```bash
 ansible all -m ping
+```
