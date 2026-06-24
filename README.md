@@ -17,3 +17,10 @@ This project uses Ansible to automate Ubuntu server configuration in my Proxmox 
  - Ubuntu target VM
  - Ansible control node
  - Prometheus and Grafana monitoring stack
+
+## Ansible Connectivity Test
+
+Verified Ansible connectivity to managed Ubuntu servers using:
+
+```bash
+ansible all -m ping
